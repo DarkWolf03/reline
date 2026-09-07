@@ -50,7 +50,7 @@ h1 {
     font-family: Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: bold;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    font-size: clamp(1.6rem, 2.5vw, 2.5rem);
     letter-spacing: 1px;
 }
 h2 {
@@ -193,6 +193,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 3vh 0;
+    align-items: center;
 }
 
 nav a {
@@ -232,13 +233,24 @@ nav a:hover {
 
 .overlay-content {
     position: relative;
-    top: 25%;
+    top: 10vh;
     width: 100%;
-    text-align: center;
+    text-align: center;display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .overlay a {
     display: block;
+    font-size: 40px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.overlay a:hover {
+    letter-spacing: 5px;
+    transition: 0.3s;
 }
 
 .closebtn {
@@ -422,7 +434,7 @@ nav a:hover {
         grid-template-columns: 1fr;
         gap: 1rem;
         height: 50vh;
-        margin-top: 40vh;
+        margin-top: 35vh;
     }
 
     .homepage-right {
