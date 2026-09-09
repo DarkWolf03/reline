@@ -5,11 +5,11 @@
 	<meta charset="utf-8"/>
 	<meta name="Description" content="">
 	<meta name="Keywords" content="">
-	<meta name="author" content="">
+	<meta name="author" content="Larisa Zadravec">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
 	<title>Reline</title>
-	<link rel="icon" type="image/x-icon" href="">
+	<link rel="icon" type="image/x-icon" href="img/Logo/RE short LOGO/RE-logo-reline-short-white-transperent-big.png">
 	
 	<link href="css/styles.css" rel="stylesheet" type="text/css">
 
@@ -17,99 +17,151 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/script.js"></script>
 	
+    <style>
+
+        nav {
+            background-color: transparent;
+        }
+        #side-nav {
+            background-color: transparent;
+        }
+
+    </style>
 	
 </head>
 
 <body>
 
-
-    <div class="video-background">
-        <iframe
-            src="https://www.youtube.com/embed/XLY7jh7GH5U?autoplay=1&mute=1&loop=1&playlist=XLY7jh7GH5U&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3 ?controls=0&showinfo=0"
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-        ></iframe>
-
-    </div>
-
-
-    <div id="homepage-container">
-        
-
-        <!-- NAVIGATION -->
-        <nav>
-
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">
             <a href="index.html">
-                <h1>ЯEL|NE</h1>
+                <img src="img/Logo/FULL NAME LOGO/reline-logo-white.png">
             </a>
-
+        </div>
+        <div class="nav-menu">
             <button class="burger-btn" onclick="openNav()">
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
                 <div class="burger-line"></div>
             </button>
-
-        </nav>
-
-
-        <!-- CONTENT -->
-        <div class="homepage">
-            <div class="homepage-left">
-                <h2>ЯEL|NE</h2>
-                <p>cross the line to attach a new page to your story</p>
-
-                <div class="homepage-socials">
-                    <a href="https://www.instagram.com/relineofficial__" target="_blank">
-                        <img src="img/instagram.png">
-                    </a>
-                   <a href="https://www.tiktok.com/@_relinecrew" target="_blank">
-                        <img src="img/tiktok.png">
-                    </a>
-                    <a href="https://www.youtube.com/@_RELINEcrew" target="_blank">
-                        <img src="img/youtube.png">
-                    </a>
-                    
-                </div>
-            </div>
-
-            <div class="homepage-right">
-
-                <div class="homepage-info">
-                    <p>🎵 JENNIE - Like Jennie MMA ver.</p>
-                    <a href="https://youtu.be/XLY7jh7GH5U" class="button-3 hompage-info-button" target="_blank">Watch video on YouTube</a>
-                </div>
-
-                <p class="homepage-rights">©2026 RELINE. All rights reserved.</p>
-            </div>     
-
         </div>
-        
+    </nav>
 
-
+    <!-- LINKS ON THE SIDE -->
+    <div id="side-nav">
+        <a href="https://www.youtube.com/@_RELINEcrew" target="_blank"  class="side-nav-a">
+            <img src="img/youtube.png">
+        </a>
+        <a href="https://www.instagram.com/relineofficial__" target="_blank"  class="side-nav-a">
+            <img src="img/instagram.png">
+        </a>
+        <a href="https://www.tiktok.com/@_relinecrew" target="_blank"  class="side-nav-a">
+            <img src="img/tiktok.png">
+        </a>
+        <a href="https://linktr.ee/relinecrew" target="_blank"  class="side-nav-a">
+            <img src="img/linktree.png">
+        </a>
     </div>
 
 
+    <!-- OVERLAY NAVIGATION -->
+    <div id="overlay" class="overlay">
 
-
-    <!-- FULLSCREEN MENU -->
-    <div id="myNav" class="overlay">
-
-        <button class="closebtn" onclick="closeNav()">
-            <div class="burger-line-close bar-1"></div>
-            <div class="burger-line-close bar-2"></div>
-        </button>
+        <div class="overlay-header">
+            <img src="img/Logo/FULL NAME LOGO/reline-logo-white.png" class="overlay-h1">
+            <button class="close-btn" onclick="closeNav()">
+                <div class="close-line"></div>
+                <div class="close-line"></div>
+            </button>
+        </div>
 
         <div class="overlay-content">
-            <div>
-                <a href="#">Home</a>
-                <a href="#">About us</a>
-                <a href="#">Projects</a>
-                <a href="#">Gallery</a>
-                <a href="#">Contact</a>
+
+            <a href="index.html" class="nav-link">
+                <span class="nav-number">01</span>
+                <span class="nav-name">HOME</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="pages/about.html" class="nav-link">
+                <span class="nav-number">02</span>
+                <span class="nav-name">ABOUT</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="pages/projects.html" class="nav-link">
+                <span class="nav-number">03</span>
+                <span class="nav-name">PROJECTS</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="#" class="nav-link">
+                <span class="nav-number">04</span>
+                <span class="nav-name">CONTACT</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+        </div>
+
+        <div class="overlay-footer">
+            <p>cross the line to attach a new page to your story</p>
+
+            <div class="overlay-socials">
+                <a href="https://www.youtube.com/@_RELINEcrew" target="_blank"  class="side-nav-a">
+                    <img src="img/youtube.png">
+                </a>
+                <a href="https://www.instagram.com/relineofficial__" target="_blank"  class="side-nav-a">
+                    <img src="img/instagram.png">
+                </a>
+                <a href="https://www.tiktok.com/@_relinecrew" target="_blank"  class="side-nav-a">
+                    <img src="img/tiktok.png">
+                </a>
+                <a href="https://linktr.ee/relinecrew" target="_blank"  class="side-nav-a">
+                    <img src="img/linktree.png">
+                </a>
             </div>
         </div>
 
     </div>
+
+
+    
+    <!-- VIDEO -->
+    <div class="video-background">
+        <iframe
+            src="https://www.youtube.com/embed/XLY7jh7GH5U?autoplay=1&mute=1&loop=1&playlist=XLY7jh7GH5U&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+
+
+    <!-- CONTENT OVER VIDEO -->
+    <section id="homepage-container">
+
+        <div class="homepage-container">
+
+            <div class="homepage-intro">
+                <h2>ЯEL|NE</h2>
+                <p class="typing">cross the line to attach a new page to your story</p>
+            </div>
+
+            <div class="homepage-commands">
+
+                <div class="homepage-video">
+                    <p class="homepage-video-title">🎵 JENNIE - Like Jennie MMA ver.</p>
+                    <a href="https://www.youtube.com/watch?v=XLY7jh7GH5U" class="button-3 homepage-video-link" target="_blank">Watch on YouTube</a>
+                </div>
+            </div>
+
+        </div>
+            
+    </section>
+
+
+
 
 
 </body>
