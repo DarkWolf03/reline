@@ -143,7 +143,7 @@ document.getElementById("footer").innerHTML = `
 
 	<div class="footer">
 
-		<div>
+		<div class="footer-logo">
 			<img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png">
 			<a href="" class="footer-mail">relinecrew@gmail.com</a>
 		</div>
