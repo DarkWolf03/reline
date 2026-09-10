@@ -65,8 +65,14 @@ document.getElementById("overlay").innerHTML = `
             <span class="nav-arrow">↗</span>
         </a>
 
-        <a href="#" class="nav-link">
+        <a href="gallery.html" class="nav-link">
             <span class="nav-number">04</span>
+            <span class="nav-name">GALLERY</span>
+            <span class="nav-arrow">↗</span>
+        </a>
+
+        <a href="#footer" class="nav-link">
+            <span class="nav-number">05</span>
             <span class="nav-name">CONTACT</span>
             <span class="nav-arrow">↗</span>
         </a>
@@ -104,3 +110,72 @@ function openNav() {
 function closeNav() {
     document.getElementById("overlay").classList.remove("open");
 }
+
+
+
+// FOOTER
+document.getElementById("footer").innerHTML = `
+
+    <!-- Scrolling marquee -->
+	<div class="footer-marquee" aria-hidden="true">
+		<div class="footer-marquee-track">
+			<span>ЯEdefine your path</span>
+			<span class="dot">●</span>
+			<span class="filled">ЯEline your story</span>
+			<span class="dot">●</span>
+
+			<span>ЯEdefine your path</span>
+			<span class="dot">●</span>
+			<span class="filled">ЯEline your story</span>
+			<span class="dot">●</span>
+
+			<span>ЯEdefine your path</span>
+			<span class="dot">●</span>
+			<span class="filled">ЯEline your story</span>
+			<span class="dot">●</span>
+
+			<span>ЯEdefine your path</span>
+			<span class="dot">●</span>
+			<span class="filled">ЯEline your story</span>
+			<span class="dot">●</span>
+		</div>
+	</div>
+
+	<div class="footer">
+
+		<div>
+			<img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png">
+			<a href="" class="footer-mail">relinecrew@gmail.com</a>
+		</div>
+
+		<div class="footer-nav">
+			<h4>NAVIGATE</h4>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="projects.html">Projects</a></li>
+				<li><a href="gallery.html">Gallery</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-social">
+			<h4>Socials</h4>
+			<ul>
+				<li><a href="https://www.youtube.com/@_RELINEcrew" target="_blank">YouTube</a></li>
+				<li><a href="https://www.instagram.com/relineofficial__" target="_blank">Instagram</a></li>
+				<li><a href="https://www.tiktok.com/@_relinecrew" target="_blank">TikTok</a></li>
+				<li><a href="https://linktr.ee/relinecrew" target="_blank">Linktree</a></li>
+			</ul>
+		</div>
+
+	</div>
+
+	<div class="footer-bottom">
+
+		<p>© 2026 ЯEL|NE</p>
+
+		<p>Made by <a href="">Larisa Zadravec</a></p>
+
+	</div>
+`;
+
