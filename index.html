@@ -15,21 +15,31 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script src="js/script.js"></script>
 	
     <style>
 
         nav {
             background-color: transparent;
-            border: none;
         }
-        #side-nav {
-            background-color: transparent;
-            border: none;
+
+
+        .nav-menu-text a:nth-child(1) {
+            opacity: 1;
+            color: var(--secondary);
         }
-        .nav-menu {
-            border: none;
+        .nav-menu-text a:nth-child(1)::before,
+        .nav-menu-text a:nth-child(1)::after {
+            width: 0.75rem;
+            background: var(--secondary);
         }
+        .nav-menu-text a:nth-child(1):hover {
+            color: var(--gray);
+        }
+        .nav-menu-text a:nth-child(1):hover::before,
+        .nav-menu-text a:nth-child(1):hover::after {
+            background: var(--gray);
+        }
+
 
     </style>
 	
@@ -38,36 +48,7 @@
 <body>
 
     <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-logo">
-            <a href="index.html">
-                <img src="img/Logo/FULL NAME LOGO/reline-logo-white.png">
-            </a>
-        </div>
-        <div class="nav-menu">
-            <button class="burger-btn" onclick="openNav()">
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-                <div class="burger-line"></div>
-            </button>
-        </div>
-    </nav>
-
-    <!-- LINKS ON THE SIDE -->
-    <div id="side-nav">
-        <a href="https://www.youtube.com/@_RELINEcrew" target="_blank"  class="side-nav-a">
-            <img src="img/youtube.png">
-        </a>
-        <a href="https://www.instagram.com/relineofficial__" target="_blank"  class="side-nav-a">
-            <img src="img/instagram.png">
-        </a>
-        <a href="https://www.tiktok.com/@_relinecrew" target="_blank"  class="side-nav-a">
-            <img src="img/tiktok.png">
-        </a>
-        <a href="https://linktr.ee/relinecrew" target="_blank"  class="side-nav-a">
-            <img src="img/linktree.png">
-        </a>
-    </div>
+    <nav id="nav"></nav>
 
 
     <!-- OVERLAY NAVIGATION -->
@@ -137,16 +118,29 @@
     </div>
 
 
-    
-    <!-- VIDEO -->
-    <div class="video-background">
-        <iframe
-            src="https://www.youtube.com/embed/XLY7jh7GH5U?autoplay=1&mute=1&loop=1&playlist=XLY7jh7GH5U&controls=0&modestbranding=1&rel=0&iv_load_policy=3"
-            allow="autoplay; encrypted-media"
-            allowfullscreen>
-        </iframe>
+
+     <!-- LINKS ON THE SIDE -->
+    <div id="side-nav">
+        <a href="https://www.youtube.com/@_RELINEcrew" target="_blank"  class="side-nav-a">
+            <img src="img/youtube.png">
+        </a>
+        <a href="https://www.instagram.com/relineofficial__" target="_blank"  class="side-nav-a">
+            <img src="img/instagram.png">
+        </a>
+        <a href="https://www.tiktok.com/@_relinecrew" target="_blank"  class="side-nav-a">
+            <img src="img/tiktok.png">
+        </a>
+        <a href="https://linktr.ee/relinecrew" target="_blank"  class="side-nav-a">
+            <img src="img/linktree.png">
+        </a>
     </div>
 
+
+    
+    <!-- VIDEO -->
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="video/jennie-LikeJennie-MMA-performanceVideo-SloveniaCroatia.mov" type="video/mp4">
+    </video>
 
 
     <!-- CONTENT OVER VIDEO -->
@@ -173,7 +167,7 @@
 
 
 
-
+<script src="js/script.js" defer></script>
 
 </body>
 </html>

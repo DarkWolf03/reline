@@ -1,108 +1,62 @@
-// NAVIGATION
-document.getElementById("nav").innerHTML = `
-    <div class="nav-logo">
-        <a href="../index.html">
-            <img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png">
-        </a>
-    </div>
-    <div class="nav-menu">
-        <button class="burger-btn" onclick="openNav()">
-            <div class="burger-line"></div>
-            <div class="burger-line"></div>
-            <div class="burger-line"></div>
-        </button>
-    </div>
-`;
+// =============== NAVIGATION ===============
+document.addEventListener("DOMContentLoaded", function () {
+    const nav = document.getElementById("nav");
+    if (!nav) return;
 
-// SOCIALS ON THE RIGHT
-document.getElementById("side-nav").innerHTML = `
-    <a href="https://www.youtube.com/@_RELINEcrew" target="_blank" class="side-nav-a">
-        <img src="../img/youtube.png" alt="YouTube">
-    </a>
+    const path = window.location.pathname;
+    const inSubfolder = path.includes("/pages/");
 
-    <a href="https://www.instagram.com/relineofficial__" target="_blank" class="side-nav-a">
-        <img src="../img/instagram.png" alt="Instagram">
-    </a>
+    let logoPath, homeLink, menuHTML;
 
-    <a href="https://www.tiktok.com/@_relinecrew" target="_blank" class="side-nav-a">
-        <img src="../img/tiktok.png" alt="TikTok">
-    </a>
+    if (inSubfolder) {
+        logoPath = "../img/Logo/RE short LOGO/RE-logo-reline-short-white-transperent-big.png";
+        homeLink = "../index.html";
+        menuHTML = `
+            <a href="../index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="projects.html">Projects</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#footer">Contact</a>
+        `;
+    } else {
+        logoPath = "img/Logo/RE short LOGO/RE-logo-reline-short-white-transperent-big.png";
+        homeLink = "index.html";
+        menuHTML = `
+            <a href="index.html">Home</a>
+            <a href="pages/about.html">About Us</a>
+            <a href="pages/projects.html">Projects</a>
+            <a href="pages/gallery.html">Gallery</a>
+            <a href="pages/about.html#footer">Contact</a>
+        `;
+    }
 
-    <a href="https://linktr.ee/relinecrew" target="_blank" class="side-nav-a">
-        <img src="../img/linktree.png" alt="Linktree">
-    </a>
-`;
-
-
-// SOCIALS ON THE RIGHT
-document.getElementById("overlay").innerHTML = `
-
-    <div class="overlay-header">
-        <img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png" class="overlay-h1">
-        <button class="close-btn" onclick="closeNav()">
-            <div class="close-line"></div>
-            <div class="close-line"></div>
-        </button>
-    </div>
-
-    <div class="overlay-content">
-
-        <a href="../index.html" class="nav-link">
-            <span class="nav-number">01</span>
-            <span class="nav-name">HOME</span>
-            <span class="nav-arrow">↗</span>
-        </a>
-
-        <a href="about.html" class="nav-link">
-            <span class="nav-number">02</span>
-            <span class="nav-name">ABOUT</span>
-            <span class="nav-arrow">↗</span>
-        </a>
-
-        <a href="projects.html" class="nav-link">
-            <span class="nav-number">03</span>
-            <span class="nav-name">PROJECTS</span>
-            <span class="nav-arrow">↗</span>
-        </a>
-
-        <a href="gallery.html" class="nav-link">
-            <span class="nav-number">04</span>
-            <span class="nav-name">GALLERY</span>
-            <span class="nav-arrow">↗</span>
-        </a>
-
-        <a href="#footer" class="nav-link">
-            <span class="nav-number">05</span>
-            <span class="nav-name">CONTACT</span>
-            <span class="nav-arrow">↗</span>
-        </a>
-
-    </div>
-
-    <div class="overlay-footer">
-        <p>cross the line to attach a new page to your story</p>
-
-        <div class="overlay-socials">
-            <a href="https://www.youtube.com/@_RELINEcrew" target="_blank"  class="side-nav-a">
-                <img src="../img/youtube.png">
-            </a>
-            <a href="https://www.instagram.com/relineofficial__" target="_blank"  class="side-nav-a">
-                <img src="../img/instagram.png">
-            </a>
-            <a href="https://www.tiktok.com/@_relinecrew" target="_blank"  class="side-nav-a">
-                <img src="../img/tiktok.png">
-            </a>
-            <a href="https://linktr.ee/relinecrew" target="_blank"  class="side-nav-a">
-                <img src="../img/linktree.png">
+    nav.innerHTML = `
+        <div class="nav-logo">
+            <a href="${homeLink}">
+                <img src="${logoPath}" alt="RE logo">
             </a>
         </div>
-    </div>
 
-`;
+        <div class="nav-menu">
+            <button class="burger-btn" onclick="openNav()">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+            </button>
+        </div>
+
+        <div class="nav-menu-text">
+            ${menuHTML}
+        </div>
+    `;
+});
 
 
 
-// NAVIGATION OVERLAY
+
+
+
+// =============== NAVIGATION OVERLAY ===============
 function openNav() {
     document.getElementById("overlay").classList.add("open");
 }
@@ -113,7 +67,7 @@ function closeNav() {
 
 
 
-// FOOTER
+// =============== FOOTER ===============
 document.getElementById("footer").innerHTML = `
 
     <!-- Scrolling marquee -->
@@ -145,7 +99,7 @@ document.getElementById("footer").innerHTML = `
 
 		<div class="footer-logo">
 			<img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png">
-			<a href="" class="footer-mail">relinecrew@gmail.com</a>
+            <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
 		</div>
 
 		<div class="footer-nav">
@@ -174,8 +128,102 @@ document.getElementById("footer").innerHTML = `
 
 		<p>© 2026 ЯEL|NE</p>
 
-		<p>Made by <a href="">Larisa Zadravec</a></p>
+		<p>Made by <a href="https://linktr.ee/zadravec_larisa" target="_blank">Larisa Zadravec</a></p>
 
 	</div>
 `;
+
+
+
+// =============== COPY MAIL IN FOOTER ===============
+function copyText(btn) {
+    const mail = btn.getAttribute("data-mail");
+
+    const temp = document.createElement("textarea");
+    temp.value = mail;
+    temp.style.position = "fixed";
+    temp.style.opacity = "0";
+    document.body.appendChild(temp);
+    temp.focus();
+    temp.select();
+
+    try {
+      document.execCommand("copy");
+      btn.innerText = "Copied!";
+      setTimeout(() => btn.innerText = mail, 1500);
+    } catch (e) {
+      alert("Copy failed: " + e);
+    }
+
+    document.body.removeChild(temp);
+}
+
+
+
+
+// =============== GALLERY ===============
+/* --- 1. LIGHTBOX LOGIC --- */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+
+function openLightbox(element) {
+    // Set the source of the big image to the clicked image's source
+    lightboxImg.src = element.src;
+    // Add class to show the overlay
+    lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+    // Remove class to hide overlay
+    lightbox.classList.remove('active');
+    // Clear source to save memory
+    lightboxImg.src = "";
+}
+
+// Optional: Close lightbox if user clicks the dark background
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        closeLightbox();
+    }
+});
+
+
+/* --- 2. PAGINATION LOGIC --- */
+let currentPage = 1;
+const totalPages = 9;
+
+function changePage(direction) {
+    if (direction === 'next' && currentPage < totalPages) {
+        currentPage++;
+    } else if (direction === 'prev' && currentPage > 1) {
+        currentPage--;
+    } else {
+        return; // Do nothing if on first or last page
+    }
+
+    updateGalleryView();
+}
+
+function updateGalleryView() {
+    // Update the number text
+    document.getElementById('page-number').innerText = currentPage;
+
+    // Hide all pages
+    document.getElementById('page-1').style.display = 'none';
+    document.getElementById('page-2').style.display = 'none';
+    document.getElementById('page-3').style.display = 'none';
+    document.getElementById('page-4').style.display = 'none';
+    document.getElementById('page-5').style.display = 'none';
+    document.getElementById('page-6').style.display = 'none';
+    document.getElementById('page-7').style.display = 'none';
+    document.getElementById('page-8').style.display = 'none';
+    document.getElementById('page-9').style.display = 'none';
+
+    // Show current page
+    document.getElementById('page-' + currentPage).style.display = 'grid';
+}
+
+
+
+
 

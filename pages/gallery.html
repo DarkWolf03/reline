@@ -15,6 +15,25 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<style>
+		.nav-menu-text a:nth-child(4) {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        .nav-menu-text a:nth-child(4)::before,
+        .nav-menu-text a:nth-child(4)::after {
+            width: 0.75rem;
+            background: var(--secondary);
+        }
+        .nav-menu-text a:nth-child(4):hover {
+            color: var(--gray);
+        }
+        .nav-menu-text a:nth-child(4):hover::before,
+        .nav-menu-text a:nth-child(4):hover::after {
+            background: var(--gray);
+        }
+	</style>
 	
 </head>
 
@@ -24,15 +43,178 @@
     <!-- NAVIGATION -->
     <nav id="nav"></nav>
 
-    <!-- LINKS ON THE SIDE -->
-    <div id="side-nav"></div>
-
     <!-- OVERLAY NAVIGATION -->
     <div id="overlay" class="overlay"></div>
 
 
     <div id="body">
         <h2>Gallery</h2>
+
+		<div class="gallery">
+
+			<!-- PAGE 1 -->
+			<div class="gallery-grid" id="page-1">
+				<img src="../img/Group_photos/AsianRevolution-germany-kpop-dance-1.PNG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/AsianRevolution-germany-kpop-dance-2.WEBP" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/ateez-bad-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/ateez-bad-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/p1harmony-KillinIt-KWF-KpopWorldFestival2026-kpop-dance-cover-1.JPG" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/p1harmony-KillinIt-KWF-KpopWorldFestival2026-kpop-dance-cover-2.PNG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/lesserafim-boompala-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/SeungYeon-clc-danceClass-1.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/SeungYeon-clc-danceClass-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/SeungYeon-clc-danceClass-3.JPG" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 2 -->
+			<div class="gallery-grid" id="page-2" style="display: none;">
+				<img src="../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-3.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-4.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/lesserafim-spaghetti-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/xlov-biip-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BoomShakaLaka-2026-bts-2.0-kpop-dance-cover-NinaPernat-1.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BoomShakaLaka-2026-bts-2.0-kpop-dance-cover-NinaPernat-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BoomShakaLaka-2026-bts-2.0-kpop-dance-cover-NinaPernat-3.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/BoomShakaLaka-2026-bts-2.0-kpop-dance-cover-1.JPG" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 3 -->
+			<div class="gallery-grid" id="page-3" style="display: none;">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-riize-siren-kpop-dance-cover-1.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-riize-siren-kpop-dance-cover-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-riize-siren-kpop-dance-cover-3.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-p1harmony-KillinIt-kpop-dance-cover-1.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-p1harmony-KillinIt-kpop-dance-cover-2.JPG" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/NationalChampionship-UPZS-p1harmony-KillinIt-kpop-dance-cover-3.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-6.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-3.JPG" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 4 -->
+			<div class="gallery-grid" id="page-4" style="display: none;">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-4.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-5.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/straykids-backdoor-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/straykids-backdoor-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-01.jpg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-02.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-03.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-04.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-05.PNG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-06.jpeg" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 5 -->
+			<div class="gallery-grid" id="page-5" style="display: none;">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-07.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-08.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-09.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-10.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-11.jpeg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-12.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-13.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-14.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-15.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-16.jpeg" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 6 -->
+			<div class="gallery-grid" id="page-6" style="display: none;">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-17.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-18.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-20.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-21.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-22.jpeg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-23.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-24.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-25.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-26.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-27.jpeg" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 7 -->
+			<div class="gallery-grid" id="page-7" style="display: none;">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-28.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-29.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-30.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-31.jpeg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-32.jpeg" alt="finished" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-2.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-3.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-4.JPG" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/NationalChampionship-UPZS-jennie-likeJennie-kpop-dance-cover-5.JPG" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 8 -->
+			<div class="gallery-grid" id="page-8" style="display: none;">
+				<img src="../img/Group_photos/p1harmony-KillinIt-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/p1harmony-KillinIt-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/everglow-LaDiDa-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/everglow-LaDiDa-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/xlov-1andonly-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/xlov-1andonly-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/aespa-whiplash-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/aespa-whiplash-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/meovv-handsup-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/YejiRyujin-mixAndMax-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+			<!-- PAGE 9 -->
+			<div class="gallery-grid" id="page-9" style="display: none;">
+				<img src="../img/Group_photos/ateez-iceonmyteeth-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/ateez-iceonmyteeth-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/ateez-iceonmyteeth-kpop-dance-cover-3.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/viviz-shhh-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/viviz-shhh-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+
+				<img src="../img/Group_photos/RedVelvet-monster-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/RedVelvet-monster-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/aespa-armageddon-kpop-dance-cover-1.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/aespa-armageddon-kpop-dance-cover-2.jpg" alt="Photo" onclick="openLightbox(this)">
+				<img src="../img/Group_photos/aespa-armageddon-kpop-dance-cover-3.jpg" alt="Photo" onclick="openLightbox(this)">
+			</div>
+
+
+
+			<!-- CONTROLS -->
+			<div class="pagnitation">
+				<button onclick="changePage('prev')" class="controls-button">
+					<img src="../img/left-arrow.png">
+				</button>
+				<p class="page-number">
+					<span id="page-number">1</span><span>/9</span>
+				</p>
+        		<button onclick="changePage('next')" class="controls-button">
+					<img src="../img/right-arrow.png">
+				</button>
+			</div>
+
+
+			<!-- LIGHTBOX OVERLAY -->
+			<div class="lightbox" id="lightbox">
+				<button class="close-btn" onclick="closeLightbox()">
+					<div class="close-line"></div>
+            		<div class="close-line"></div>
+				</button>
+				<img id="lightbox-img" src="" alt="Zoomed Photo">
+			</div>
+			
+
+		</div>
+
 
 
 

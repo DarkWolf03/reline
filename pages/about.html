@@ -15,6 +15,26 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+	<style>
+		.nav-menu-text a:nth-child(2) {
+            opacity: 1;
+            color: var(--secondary);
+        }
+        .nav-menu-text a:nth-child(2)::before,
+        .nav-menu-text a:nth-child(2)::after {
+            width: 0.75rem;
+            background: var(--secondary);
+        }
+        .nav-menu-text a:nth-child(2):hover {
+            color: var(--gray);
+        }
+        .nav-menu-text a:nth-child(2):hover::before,
+        .nav-menu-text a:nth-child(2):hover::after {
+            background: var(--gray);
+        }
+	</style>
 	
 </head>
 
@@ -23,10 +43,7 @@
     
     <!-- NAVIGATION -->
     <nav id="nav"></nav>
-
-    <!-- LINKS ON THE SIDE -->
-    <div id="side-nav"></div>
-
+	
     <!-- OVERLAY NAVIGATION -->
     <div id="overlay" class="overlay"></div>
 
