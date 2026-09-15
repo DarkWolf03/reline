@@ -12,6 +12,7 @@
     --gray: #85878c;
 
     --border: solid 2px #f4f4f2;
+    --border-light:  1px solid rgba(244, 244, 242, 0.1)
 }
 
 * {
@@ -23,6 +24,7 @@
 body {
     background: var(--primary);
     color: var(--secondary);
+    overflow-x: hidden;
 }
 
 #body {
@@ -98,7 +100,7 @@ h2 {
     letter-spacing: 1px;
     font-size: clamp(2rem, 4vw, 4rem);
     text-align: center;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
     margin-top: 1vh;
 }
 h3 {
@@ -108,7 +110,7 @@ h3 {
     font-weight:bold; 
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     letter-spacing: 1px;
-    text-align: center;
+    margin-bottom: 1vh;
 }
 h4 {
     font-family: DM-sans, Arial, sans-serif;
@@ -298,7 +300,7 @@ nav {
 
 .nav-menu-text {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -307,7 +309,7 @@ nav {
     position: relative;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    width: 7rem;
+    width: 8rem;
     text-align: center;
     color: var(--secondary);
     transition: color 0.3s ease, opacity 0.3s ease;
@@ -336,7 +338,7 @@ nav {
 
 .nav-menu-text a:hover::before,
 .nav-menu-text a:hover::after {
-    width: 0.4rem;
+    width: 0.75rem;
 }
 
 
@@ -542,6 +544,7 @@ nav {
 footer {
     margin-top: 12vh;
     border-top: var(--border);
+    background: var(--primary);
 }
 
 /* Scrolling marquee strip */
@@ -811,7 +814,7 @@ footer {
 #homepage-container {
     position: relative;
     z-index: 10;
-    width: 91.5%;
+    width: 96%;
     min-height: 85vh;
     display: flex;
     align-items: flex-end;
@@ -820,10 +823,46 @@ footer {
     z-index: 1;
 }
 
-#homepage-container h2 {
-    text-align: left;
-    font-size: clamp(5rem, 7vw, 7rem);
+.homepage-container h2 {
     margin-bottom: 0;
+}
+
+.homepage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+
+.homepage-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+}
+
+.homepage-links a {
+    border: solid 3px var(--secondary);
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+    transition: 0.2s;
+    margin-top: 1rem;
+    transition: 0.4s;
+    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.222);
+}
+.homepage-links a:hover {
+    transform: scale(1.08);
+    transition: 0.3s;
+    filter: brightness(150%);
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.1);
 }
 
 
@@ -854,7 +893,7 @@ footer {
 }
 
 .homepage-video {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
     border: solid 2px var(--black);
     padding: 2vh 3rem;
@@ -863,7 +902,7 @@ footer {
         background-color 0.3s ease;
 }
 .homepage-video-title {
-    opacity: 0.5;
+    opacity: 0.7;
     transition: margin-bottom 0.4s ease;
 }
 
@@ -914,39 +953,6 @@ footer {
 
 
 
-#side-nav {
-    position: fixed;
-    right: 0;
-    top: 8vh;
-    width: 3.3rem;
-    padding: 0 0.75rem;
-    padding-bottom: 2vh;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 90;
-}
-
-.side-nav-a {
-    border: solid 3px var(--secondary);
-    border-radius: 50px;
-    width: 25px;
-    height: 25px;
-    padding: 10px;
-    transition: 0.2s;
-    margin-bottom: 1rem;
-    transition: 0.4s;
-    box-shadow: 0px 0px 0px 0px rgba(255, 255, 255, 0.222);
-}
-
-.side-nav-a:hover {
-    transform: scale(1.08);
-    transition: 0.3s;
-    filter: brightness(150%);
-    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.1);
-}
 
 
 /* ========== VIDEO BACKGROUND ========== */
@@ -972,10 +978,9 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+    overflow-x: hidden;
 }
 
-
-/* Vertical line */
 .timeline::after {
     content: '';
     position: absolute;
@@ -991,10 +996,9 @@ footer {
     bottom: 0;
     left: 50%;
     margin-left: -1px;
+    z-index: 0;
 }
 
-
-/* Year */
 .timeline-year {
     text-align: center;
     margin: 40px auto;
@@ -1007,40 +1011,40 @@ footer {
     border-radius: 100px;
 }
 
-
-/* Itemy */
+/* Item */
 .timeline-item {
     position: relative;
     width: 50%;
     padding: 10px 30px;
     box-sizing: border-box;
-    transition: 0.3s ease-in-out;
+    z-index: 1; 
+    opacity: 0;
+    transition:
+        opacity 1s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
 }
 
 .timeline-item.left {
     left: 0;
     text-align: right;
-    transition: all 0.3s;
+    transform: translateX(-60px);
 }
 
 .timeline-item.right {
     left: 50%;
     text-align: left;
-    transition: all 0.3s;
+    transform: translateX(60px);
 }
 
-.left:hover .timeline-content {
-    transform: translateX(-10px);
-}
-.right:hover .timeline-content {
-    transform: translateX(10px);
+.timeline-item.is-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
+.left:hover .timeline-content  { transform: translateX(-10px); }
+.right:hover .timeline-content { transform: translateX(10px); }
 
-
-
-
-/* Dot */
 .timeline-dot {
     position: absolute;
     width: 14px;
@@ -1052,12 +1056,9 @@ footer {
     transition: all 0.35s ease;
     top: 50%;
 }
-.timeline-item.left .timeline-dot {
-    right: -9px;
-}
-.timeline-item.right .timeline-dot {
-    left: -9px;
-}
+.timeline-item.left .timeline-dot  { right: -9px; }
+.timeline-item.right .timeline-dot { left: -9px; }
+
 .timeline-item:hover .timeline-dot {
     background: var(--secondary);
     border-color: var(--secondary);
@@ -1065,49 +1066,34 @@ footer {
     box-shadow: 0 0 0 4px rgba(244, 244, 242, 0.15);
 }
 
-
-
-
-/* Content */
 .timeline-content {
     padding: 2rem;
     transition: 0.3s ease;
 }
-
 .timeline-date {
     color: var(--gray);
     font-size: clamp(1rem, 1vw, 1rem);
 }
-
-.timeline-award {
-    color: var(--color-light)
+.timeline-award { 
+    color: var(--color-light); 
+}
+.timeline-song  { 
+    font-style: italic; 
 }
 
-.timeline-song {
-    font-style: italic;
-}
 .timeline-song,
-.timeline .button-4 {
-    margin-top: 1vh;
+.timeline .button-4 { 
+    margin-top: 1vh; 
 }
 
-.timeline-item:hover .button-4 {
-    color: var(--color-light)
+.timeline-item:hover .button-4 { 
+    color: var(--color-light); 
 }
-
-.timeline-item:hover .timeline-dot {
-    background-color: var(--secondary);
-    border: solid var(--secondary) 1px;
-}
-
-
 
 
 
 @media screen and (max-width: 768px) {
-    .timeline::after {
-        left: 31px;
-    }
+    .timeline::after { left: 31px; }
 
     .timeline-item {
         width: 100%;
@@ -1115,54 +1101,23 @@ footer {
         padding-right: 25px;
     }
 
-    .timeline-item.left, 
+    .timeline-item.left,
     .timeline-item.right {
         left: 0;
         text-align: left;
+        transform: translateX(-40px);
+    }
+
+    .timeline-item.is-visible {
+        transform: translateX(0);
     }
 
     .timeline-item.left .timeline-dot,
-    .timeline-item.right .timeline-dot {
-        left: 23px;
-    }
+    .timeline-item.right .timeline-dot { left: 23px; }
 
-    .timeline-content {
-        border-bottom: #ffffff12 1px solid
-    }
-    
-    .timeline-year {
-        margin: 40px 0;
-    }
-
-    .left:hover .timeline-content {
-        transform: translateX(10px);
-    }
-
-}
-
-
-@media screen and (max-width: 768px) {
-    .timeline::after {
-        left: 31px;
-    }
-
-    .timeline-item {
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 25px;
-    }
-
-    .timeline-item.left, 
-    .timeline-item.right {
-        left: 0;
-        text-align: left;
-    }
-
-    .timeline-item.left .timeline-dot,
-    .timeline-item.right .timeline-dot {
-        left: 23px;
-    }
-
+    .timeline-content { border-bottom: #ffffff12 1px solid; }
+    .timeline-year { margin: 40px 0; }
+    .left:hover .timeline-content { transform: translateX(10px); }
 }
 
 
@@ -1275,3 +1230,277 @@ footer {
     }
 }
 
+
+
+
+
+
+/* ========== ABOUT ========== */
+/* Introduction */
+.about-introduction {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 10rem;
+}
+
+.about-introduction-img {
+    background-image: url("../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-10.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-introduction-content {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    width: 50%;
+    padding: 5vh 0;
+}
+
+.intro-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color);
+    margin-bottom: 2vh;
+}
+
+
+/* pics */
+.about-pics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+
+/* name */
+#about-name {
+    text-align: center;
+    border-top: var(--border-light);
+    border-bottom: var(--border-light);
+    padding: 13vh 0;
+    justify-content: center;
+}
+
+.about-name {
+    width: 60%;
+    margin: 0 20%;
+}
+
+.about-name-container {
+    display: grid;
+    grid-template-columns: 1fr 0.1fr 1.5fr;
+    margin: 4vh 0 5vh 0;
+}
+
+.about-name-divider {
+    width: 1px;
+    background: rgba(244, 244, 242, 0.15);
+    align-self: stretch;
+}
+
+.about-name-big {
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: bold;
+    color: var(--color);
+    line-height: 1;
+    display: block;
+}
+
+.about-name-small {
+    display: block;
+    margin-top: 1rem;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+.about-name-slogan {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--secondary);
+    max-width: 40ch;
+    margin: 4vh auto 0;
+    line-height: 1.4;
+    margin-bottom: 2vh;
+}
+
+/* socials */
+.about-socials {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: var(--secondary) 1px solid;
+}
+
+.about-socials-link {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25vh 0 23vh 0;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-socials-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.about-socials-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(21, 21, 21, 0.5),
+        rgba(21, 21, 21, 0.3)
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+.about-socials-link:hover::before {
+    transform: scale(1.1);
+}
+
+
+.about-socials-instagram::before {
+    background-image: url(../img/Group_photos/reline-merch-5.jpg);
+}
+.about-socials-youtube {
+    border-left: var(--secondary) 1px solid;
+    border-right: var(--secondary) 1px solid;
+}
+.about-socials-youtube::before {
+    background-image: url(../img/Group_photos/jennie-likeJennie-mma-specialProject-kpop-dance-cover-03.jpg);
+}
+.about-socials-tiktok::before {
+    background-image: url(../img/Group_photos/SeungYeon-clc-danceClass-3.JPG);
+}
+
+.about-socials-text {
+    font-size: clamp(1rem, 2vw, 2rem);
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.about-socials-go {
+    padding: 1vh 2rem;
+    width: fit-content;
+    text-align: center;
+    border-radius: 30px;
+    display: inline-block;
+    margin-top: 2vh;
+    color: var(--secondary);
+    border: solid 1px var(--secondary);
+    transition: all 0.3s;
+}
+.about-socials-go::after{
+    content: "→";
+    margin-left: 0.5rem;
+    transition: all 0.3s;
+}
+
+.about-socials-link:hover .about-socials-go {
+    color: var(--primary);
+    border: solid 1px var(--primary);
+    background-color: var(--secondary);
+}
+.about-socials-link:hover .about-socials-go::after{
+    margin-left: 1rem;
+}
+
+/* Contact */
+.about-cta {
+    background-image: 
+        linear-gradient(rgba(21, 21, 21, 0.8), 
+        rgba(21, 21, 21, 0.7)), 
+        url(../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-3.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding: 30vh 0;
+    border: var(--border-light);
+    
+}
+
+
+
+@media screen and (max-width: 1150px) {
+    
+    .about-introduction {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .about-introduction-content {
+        width: 80%;
+    }
+
+    .about-name {
+        width: 70%;
+        margin: 0 15%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    
+    .about-introduction {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .about-introduction-content {
+        width: 100%;
+    }
+
+    .about-name {
+        width: 80%;
+        margin: 0 10%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .about-name {
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    /* pics */
+    .about-pics {
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 750px) {
+    
+    .about-name {
+        width: 100%;
+        margin: 0 0%;
+    }
+
+    .about-introduction {
+        grid-template-columns: 1fr 3fr;
+    }
+}

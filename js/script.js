@@ -1,10 +1,14 @@
+
+
+
+
 // =============== NAVIGATION ===============
 document.addEventListener("DOMContentLoaded", function () {
-    const nav = document.getElementById("nav");
+    let nav = document.getElementById("nav");
     if (!nav) return;
 
-    const path = window.location.pathname;
-    const inSubfolder = path.includes("/pages/");
+    let path = window.location.pathname;
+    let inSubfolder = path.includes("/pages/");
 
     let logoPath, homeLink, menuHTML;
 
@@ -64,6 +68,96 @@ function openNav() {
 function closeNav() {
     document.getElementById("overlay").classList.remove("open");
 }
+
+
+
+// =============== OVERLAY NAVIGATION ===============
+document.addEventListener("DOMContentLoaded", function () {
+    let overlay = document.getElementById("overlay");
+    if (!overlay) return;
+
+    let path = window.location.pathname;
+    let inSubfolder = path.includes("/pages/");
+
+    let logoPath, homeLink, aboutLink, projectsLink, galleryLink, contactLink;
+
+    if (inSubfolder) {
+        logoPath = "../img/Logo/RE short LOGO/RE-logo-reline-short-white-transperent-big.png";
+        homeLink = "../index.html";
+        aboutLink = "about.html";
+        projectsLink = "projects.html";
+        galleryLink = "gallery.html";
+        contactLink = "#footer";
+    } else {
+        logoPath = "img/Logo/RE short LOGO/RE-logo-reline-short-white-transperent-big.png";
+        homeLink = "index.html";
+        aboutLink = "pages/about.html";
+        projectsLink = "pages/projects.html";
+        galleryLink = "pages/gallery.html";
+        contactLink = "pages/about.html#footer";
+    }
+
+    overlay.innerHTML = `
+        <div class="overlay-header">
+            <img src="${logoPath}" class="overlay-h1" alt="RE logo">
+            <button class="close-btn" onclick="closeNav()">
+                <div class="close-line"></div>
+                <div class="close-line"></div>
+            </button>
+        </div>
+
+        <div class="overlay-content">
+            <a href="${homeLink}" class="nav-link">
+                <span class="nav-number">01</span>
+                <span class="nav-name">HOME</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="${aboutLink}" class="nav-link">
+                <span class="nav-number">02</span>
+                <span class="nav-name">ABOUT</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="${projectsLink}" class="nav-link">
+                <span class="nav-number">03</span>
+                <span class="nav-name">PROJECTS</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="${galleryLink}" class="nav-link">
+                <span class="nav-number">04</span>
+                <span class="nav-name">GALLERY</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+
+            <a href="${contactLink}" class="nav-link" onclick="closeNav()">
+                <span class="nav-number">05</span>
+                <span class="nav-name">CONTACT</span>
+                <span class="nav-arrow">↗</span>
+            </a>
+        </div>
+
+        <div class="overlay-footer">
+            <p>cross the line to attach a new page to your story</p>
+
+            <div class="overlay-socials">
+                <a href="https://www.youtube.com/@_RELINEcrew" target="_blank" class="side-nav-a">
+                    <img src="${inSubfolder ? '../' : ''}img/youtube.png">
+                </a>
+                <a href="https://www.instagram.com/relineofficial__" target="_blank" class="side-nav-a">
+                    <img src="${inSubfolder ? '../' : ''}img/instagram.png">
+                </a>
+                <a href="https://www.tiktok.com/@_relinecrew" target="_blank" class="side-nav-a">
+                    <img src="${inSubfolder ? '../' : ''}img/tiktok.png">
+                </a>
+                <a href="https://linktr.ee/relinecrew" target="_blank" class="side-nav-a">
+                    <img src="${inSubfolder ? '../' : ''}img/linktree.png">
+                </a>
+            </div>
+        </div>
+    `;
+});
 
 
 
@@ -148,15 +242,43 @@ function copyText(btn) {
     temp.select();
 
     try {
-      document.execCommand("copy");
-      btn.innerText = "Copied!";
-      setTimeout(() => btn.innerText = mail, 1500);
+        document.execCommand("copy");
+        btn.innerText = "Copied!";
+        setTimeout(() => btn.innerText = mail, 1500);
     } catch (e) {
-      alert("Copy failed: " + e);
+        alert("Copy failed: " + e);
     }
 
     document.body.removeChild(temp);
 }
+
+
+
+
+// =============== TIMELINE SCROLL REVEAL ===============
+document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".timeline .timeline-item");
+    console.log("[timeline] items found:", items.length);
+
+    if (!items.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+        items.forEach(el => el.classList.add("is-visible"));
+        return;
+    }
+
+    const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    items.forEach(el => observer.observe(el));
+});
+
 
 
 
@@ -190,7 +312,7 @@ lightbox.addEventListener('click', function(e) {
 
 /* --- 2. PAGINATION LOGIC --- */
 let currentPage = 1;
-const totalPages = 9;
+const totalPages = 8;
 
 function changePage(direction) {
     if (direction === 'next' && currentPage < totalPages) {
@@ -217,12 +339,10 @@ function updateGalleryView() {
     document.getElementById('page-6').style.display = 'none';
     document.getElementById('page-7').style.display = 'none';
     document.getElementById('page-8').style.display = 'none';
-    document.getElementById('page-9').style.display = 'none';
 
     // Show current page
     document.getElementById('page-' + currentPage).style.display = 'grid';
 }
-
 
 
 
