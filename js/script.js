@@ -1,7 +1,3 @@
-
-
-
-
 // =============== NAVIGATION ===============
 document.addEventListener("DOMContentLoaded", function () {
     let nav = document.getElementById("nav");
@@ -278,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     items.forEach(el => observer.observe(el));
 });
-
 
 
 
