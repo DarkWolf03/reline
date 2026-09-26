@@ -19,7 +19,8 @@
     <style>
 
         nav {
-            background-color: transparent;
+            background: linear-gradient(90deg, rgba(255,0,0,0) 50%, rgba(0, 0, 0, 0.9) 80%, rgba(255,0,0,0));
+            backdrop-filter: blur(1px);
         }
 
 
@@ -38,6 +39,18 @@
         .nav-menu-text a:nth-child(1):hover::before,
         .nav-menu-text a:nth-child(1):hover::after {
             background: var(--gray);
+        }
+
+        
+        @media screen and (max-width: 900px) {
+            
+            nav {
+                background: transparent;
+            }
+        }
+
+        footer {
+            padding: 0 2%;
         }
 
 
@@ -124,12 +137,15 @@
         </div>
 
 
-        
-            
+    
     </section>
 
+    
+    <footer id="footer"></footer>
 
 
+    
+    
 
     
     <script>

@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <a href="pages/about.html">About Us</a>
             <a href="pages/projects.html">Projects</a>
             <a href="pages/gallery.html">Gallery</a>
-            <a href="pages/about.html#footer">Contact</a>
+            <a href="#footer">Contact</a>
         `;
     }
 
@@ -159,70 +159,96 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // =============== FOOTER ===============
-document.getElementById("footer").innerHTML = `
+document.addEventListener("DOMContentLoaded", function () {
+    let footer = document.getElementById("footer");
+    if (!footer) return;
 
-    <!-- Scrolling marquee -->
-	<div class="footer-marquee" aria-hidden="true">
-		<div class="footer-marquee-track">
-			<span>ЯEdefine your path</span>
-			<span class="dot">●</span>
-			<span class="filled">ЯEline your story</span>
-			<span class="dot">●</span>
+    let path = window.location.pathname;
+    let inSubfolder = path.includes("/pages/");
 
-			<span>ЯEdefine your path</span>
-			<span class="dot">●</span>
-			<span class="filled">ЯEline your story</span>
-			<span class="dot">●</span>
+    let logoPath, homeLink, aboutLink, projectsLink, galleryLink, contactLink;
 
-			<span>ЯEdefine your path</span>
-			<span class="dot">●</span>
-			<span class="filled">ЯEline your story</span>
-			<span class="dot">●</span>
+    if (inSubfolder) {
+        logoPath = "../img/Logo/FULL NAME LOGO/reline-logo-white.png";
+        homeLink = "../index.html";
+        aboutLink = "about.html";
+        projectsLink = "projects.html";
+        galleryLink = "gallery.html";
+    } else {
+        logoPath = "img/Logo/FULL NAME LOGO/reline-logo-white.png";
+        homeLink = "index.html";
+        aboutLink = "pages/about.html";
+        projectsLink = "pages/projects.html";
+        galleryLink = "pages/gallery.html";
+    }
 
-			<span>ЯEdefine your path</span>
-			<span class="dot">●</span>
-			<span class="filled">ЯEline your story</span>
-			<span class="dot">●</span>
-		</div>
-	</div>
+    footer.innerHTML = `
 
-	<div class="footer">
+        <!-- Scrolling marquee -->
+        <div class="footer-marquee" aria-hidden="true">
+            <div class="footer-marquee-track">
+                <span>ЯEdefine your path</span>
+                <span class="dot">●</span>
+                <span class="filled">ЯEline your story</span>
+                <span class="dot">●</span>
 
-		<div class="footer-logo">
-			<img src="../img/Logo/FULL NAME LOGO/reline-logo-white.png">
-            <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
-		</div>
+                <span>ЯEdefine your path</span>
+                <span class="dot">●</span>
+                <span class="filled">ЯEline your story</span>
+                <span class="dot">●</span>
 
-		<div class="footer-nav">
-			<h4>NAVIGATE</h4>
-			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<li><a href="about.html">About</a></li>
-				<li><a href="projects.html">Projects</a></li>
-				<li><a href="gallery.html">Gallery</a></li>
-			</ul>
-		</div>
+                <span>ЯEdefine your path</span>
+                <span class="dot">●</span>
+                <span class="filled">ЯEline your story</span>
+                <span class="dot">●</span>
 
-		<div class="footer-social">
-			<h4>Socials</h4>
-			<ul>
-				<li><a href="https://www.youtube.com/@_RELINEcrew" target="_blank">YouTube</a></li>
-				<li><a href="https://www.instagram.com/relineofficial__" target="_blank">Instagram</a></li>
-				<li><a href="https://www.tiktok.com/@_relinecrew" target="_blank">TikTok</a></li>
-				<li><a href="https://linktr.ee/relinecrew" target="_blank">Linktree</a></li>
-			</ul>
-		</div>
+                <span>ЯEdefine your path</span>
+                <span class="dot">●</span>
+                <span class="filled">ЯEline your story</span>
+                <span class="dot">●</span>
+            </div>
+        </div>
 
-	</div>
+        <div class="footer">
 
-	<div class="footer-bottom">
+            <div class="footer-logo">
+                <img src="${logoPath}">
+                <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
+            </div>
 
-		<p>© 2026 ЯEL|NE</p>
+            <div class="footer-nav">
+                <h4>NAVIGATE</h4>
+                <ul>
+                    <li><a href="${homeLink}">Home</a></li>
+                    <li><a href="${aboutLink}">About</a></li>
+                    <li><a href="${projectsLink}">Projects</a></li>
+                    <li><a href="${galleryLink}">Gallery</a></li>
+                </ul>
+            </div>
 
-		<p>Made by <a href="https://linktr.ee/zadravec_larisa" target="_blank">Larisa Zadravec</a></p>
+            <div class="footer-social">
+                <h4>Socials</h4>
+                <ul>
+                    <li><a href="https://www.youtube.com/@_RELINEcrew" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.instagram.com/relineofficial__" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@_relinecrew" target="_blank">TikTok</a></li>
+                    <li><a href="https://linktr.ee/relinecrew" target="_blank">Linktree</a></li>
+                </ul>
+            </div>
 
-	</div>
-`;
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© 2026 ЯEL|NE</p>
+
+            <p>Made by <a href="https://linktr.ee/zadravec_larisa" target="_blank">Larisa Zadravec</a></p>
+
+        </div>
+    `
+
+})
+
 
 
 

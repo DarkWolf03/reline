@@ -1426,8 +1426,8 @@ footer {
 
 .close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 2vh;
+    right: 3rem;
 }
 
 
@@ -1682,6 +1682,11 @@ footer {
 }
 .about-name-content {
     margin-top: 3vh;
+}
+
+.about-name-content-quote {
+    margin-top: 0.5vh;
+    font-style: italic;
 }
 
 
