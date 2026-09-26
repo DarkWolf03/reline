@@ -409,8 +409,10 @@ nav {
     margin-right: -1rem;
     width: 33px;
     height: 33px;
-    position: relative;
+    position: absolute;
     cursor: pointer;
+    top: 20px;
+    right: 30px;
 }
 
 .close-line {
@@ -640,7 +642,7 @@ footer {
     display: inline-block;
     font-family: Manrope, Arial, sans-serif;
     font-size: clamp(1rem, 1.4vw, 1.3rem);
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 1px;
     color: var(--secondary);
     padding-bottom: 0.5rem;
@@ -1424,11 +1426,7 @@ footer {
     object-fit: contain;
 }
 
-.close-btn {
-    position: absolute;
-    top: 2vh;
-    right: 3rem;
-}
+
 
 
 
@@ -1686,8 +1684,10 @@ footer {
 
 .about-name-content-quote {
     margin-top: 0.5vh;
-    font-style: italic;
+    color: var(--secondary);
+    opacity: 0.7;
 }
+
 
 
 /* socials */
