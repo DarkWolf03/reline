@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.innerHTML = `
         <div class="nav-logo">
             <a href="${homeLink}">
-                <img src="${logoPath}" alt="RE logo">
+                <img src="${logoPath}" alt="Reline logo">
             </a>
         </div>
 
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     overlay.innerHTML = `
         <div class="overlay-header">
-            <img src="${logoPath}" class="overlay-h1" alt="RE logo">
+            <img src="${logoPath}" class="overlay-h1" alt="reline logo">
             <button class="close-btn" onclick="closeNav()">
                 <div class="close-line"></div>
                 <div class="close-line"></div>
@@ -140,16 +140,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="overlay-socials">
                 <a href="https://www.youtube.com/@_RELINEcrew" target="_blank" class="side-nav-a">
-                    <img src="${inSubfolder ? '../' : ''}img/youtube.png">
+                    <img src="${inSubfolder ? '../' : ''}img/youtube.png" alt="youtube">
                 </a>
                 <a href="https://www.instagram.com/relineofficial__" target="_blank" class="side-nav-a">
-                    <img src="${inSubfolder ? '../' : ''}img/instagram.png">
+                    <img src="${inSubfolder ? '../' : ''}img/instagram.png" alt="instagram">
                 </a>
                 <a href="https://www.tiktok.com/@_relinecrew" target="_blank" class="side-nav-a">
-                    <img src="${inSubfolder ? '../' : ''}img/tiktok.png">
+                    <img src="${inSubfolder ? '../' : ''}img/tiktok.png" alt="tiktok">
                 </a>
                 <a href="https://linktr.ee/relinecrew" target="_blank" class="side-nav-a">
-                    <img src="${inSubfolder ? '../' : ''}img/linktree.png">
+                    <img src="${inSubfolder ? '../' : ''}img/linktree.png" alt="linktree">
                 </a>
             </div>
         </div>
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="footer">
 
             <div class="footer-logo">
-                <img src="${logoPath}">
+                <img src="${logoPath}" alt="reline logo">
                 <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
             </div>
 
@@ -311,24 +311,18 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 
 function openLightbox(element) {
-    // Set the source of the big image to the clicked image's source
     lightboxImg.src = element.src;
-    // Add class to show the overlay
     lightbox.classList.add('active');
 }
 
 function closeLightbox() {
-    // Remove class to hide overlay
     lightbox.classList.remove('active');
-    // Clear source to save memory
     lightboxImg.src = "";
 }
 
-// Optional: Close lightbox if user clicks the dark background
 lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-        closeLightbox();
-    }
+    if (e.target.closest('.lightbox-close-btn')) return;
+    closeLightbox();
 });
 
 

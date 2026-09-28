@@ -71,7 +71,7 @@
 			<div class="timeline-year" id="timeline-2024">
 				<h3>2024</h3>
 			</div>
-			
+
 
 			<!-- Item 1 -->
 			<div class="timeline-item right">
@@ -170,7 +170,6 @@
 			<div class="timeline-year" id="timeline-2025">
 				<h3>2025</h3>
 			</div>
-
 
 			<!-- Item 8 -->
 			<div class="timeline-item right">
@@ -669,5 +668,30 @@
 	
 
 <script src="../js/script.js"></script>
+
+<script>
+
+	document.addEventListener('DOMContentLoaded', () => {
+		const footer = document.getElementById('footer');
+		const navs = document.querySelectorAll('.timeline-navigation, .timeline-navigation-small');
+
+		if (!footer || !navs.length) return;
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				navs.forEach(nav => {
+					nav.classList.toggle('is-hidden', entry.isIntersecting);
+				});
+			});
+		}, {
+			root: null,
+			threshold: 0,
+			rootMargin: '0px 0px -50px 0px'   // triggers slightly before footer fully enters
+		});
+
+		observer.observe(footer);
+	});
+
+</script>
 </body>
 </html>
