@@ -77,12 +77,16 @@
                     <span class="intro-line"></span>
                     <p>Est. 2024 — Slovenia</p>
                 </div>
-                <p class="about-introduction-right-content">ЯEL|NE is an open K-pop dance crew founded in Slovenia in 2024. It was created to bring dancers together and give people the chance to take part in K-pop covers and special projects.</p>
-                <div class="about-introduction-right-container">
-                    <span>open crew</span>
-                    <span>K-pop covers</span>
-                </div>
 
+                <p class="about-introduction-right-content">ЯEL|NE means rebuilding your path and redefining your journey.</p>
+                <p class="about-introduction-right-content">The name comes from <i>relining</i> — reinforcing something with a new layer so it can continue and grow stronger.</p>
+
+                <p class="about-introduction-right-content">In the collective, that reflects what we do: </p>
+                <ul>
+                    <li>dancers who left crews, never had one, or want something new</li>
+                    <li>coming together to build, support, and create again</li>
+                </ul>
+                
                 <div class="about-introductions-buttons">
                     <a href="#footer" class="button-2">Contact us</a>
                     <a href="projects.html" class="button-1">our Projects</a>
@@ -98,29 +102,43 @@
 
             <div class="about-name">
 
-                <h3>Where paths reline</h3>
+                <h3>MEANING OF THE NAME</h3>
 
                 <div class="about-name-container">
                     <div>
-                        <p class="about-name-big">RE</p>
+                        <p class="about-name-big typing-name typing-name-re">RE</p>
                         <p class="about-name-small">restart · renew</p>
                     </div>
                     <div class="about-name-divider"></div>
                     <div>
-                        <p class="about-name-big">LINE</p>
+                        <p class="about-name-big typing-name typing-name-line">LINE</p>
                         <p class="about-name-small">your path · your story · your formations</p>
                     </div>
                 </div>
 
-                <div class="about-name-slogan">
-                    <p>Cross the line</p>
-                    <hr class="about-name-slogan-line">
-                    <p>to attach a new page to your story.</p>
+                <div class="about-name-content">
+                    <p>Everything links back to the same idea:<br>
+                    <span>not replacing who you are, but supporting and strengthening it while you grow.</span></p>
+                    <p>RELINE is a name living up to our actions—a space where dancers come to rebuild, connectand create new chapters together.</p>
                 </div>
-                
-                <p class="about-name-content">The name RELINE comes from relining — reinforcing something by adding a new layer
-                so it can continue and grow stronger. Everything links back to the same idea:</p>
-                <p class="about-name-content-quote">not replacing who you are, but supporting and strengthening it while you grow.</p>
+   
+
+            </div>
+
+        </section>
+
+
+        <section id="about-slogan">
+
+            <div class="about-slogan">
+
+               <div class="about-slogan">
+                    <p class="typing-slogan typing-1">Cross the line</p>
+                        <p class="about-slogan-desc">stepping out and trying something new</p>
+                    <hr class="about-slogan-line">
+                    <p class="typing-slogan typing-3">to attach a new page to your story.</p>
+                        <p class="about-slogan-desc">adding another layer to your journey</p>
+                </div>
 
             </div>
 
@@ -129,24 +147,24 @@
 
 
 
-        <section class="about-socials">
+        <section class="about-socials" id="about-socials">
             <a href="https://www.instagram.com/relineofficial__" class="about-socials-link about-socials-instagram" target="_blank">
                 <div>
-                    <p class="about-socials-text">Instagram</p>
+                    <p class="about-socials-text about-instagram">Instagram</p>
                     <p class="about-socials-go">Go</p>
                 </div>
             </a>
 
             <a href="https://www.youtube.com/@_RELINEcrew" class="about-socials-link about-socials-youtube" target="_blank">
                 <div>
-                    <p class="about-socials-text">YouTube</p>
+                    <p class="about-socials-text about-youtube">YouTube</p>
                     <p class="about-socials-go">Go</p>
                 </div>
             </a>
 
             <a href="https://www.tiktok.com/@_relinecrew" class="about-socials-link about-socials-tiktok" target="_blank">
                 <div>
-                    <p class="about-socials-text">TikTok</p>
+                    <p class="about-socials-text about-tiktok">TikTok</p>
                     <p class="about-socials-go">Go</p>
                 </div>
             </a>
@@ -159,7 +177,55 @@
 
 
 
+<script>
 
+    // =============== NAME ===============
+    const nameSection = document.getElementById('about-name');
+
+    const nameObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                nameObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    nameObserver.observe(nameSection);
+
+    
+    // =============== SLOGAN ===============
+    const section = document.getElementById('about-slogan');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target); // run only once
+        }
+        });
+    }, {
+        threshold: 0.5 // trigger when 50% of section is visible
+    });
+
+    observer.observe(section);
+
+
+    // =============== SOCIALS ===============
+    const socialsSection = document.getElementById('about-socials');
+
+    const socialsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                socialsObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    socialsObserver.observe(socialsSection);
+
+</script>
 
 <script src="../js/script.js"></script>
 </body>

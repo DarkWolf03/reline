@@ -251,7 +251,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
 // =============== COPY MAIL IN FOOTER ===============
 function copyText(btn) {
     const mail = btn.getAttribute("data-mail");
