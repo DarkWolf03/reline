@@ -1914,7 +1914,6 @@ footer {
 
 
 
-
 /* socials */
 .about-socials {
     display: grid;
@@ -2169,4 +2168,20 @@ footer {
     }
 
 
+}
+
+
+@media screen and (max-width: 500px) {
+    .about-slogan {
+        width: 100%;
+        
+    }
+
+    .typing-1 {
+        --chars: 100%;
+    }
+
+    .typing-3 {
+        --chars: 100%;
+    }
 }
