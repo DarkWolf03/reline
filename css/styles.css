@@ -1847,7 +1847,7 @@ footer {
 
     transform: translateY(-25px);
     opacity: 0;
-    animation: name-desc 0.4s ease-out 2s forwards;
+    animation: name-desc 0.4s ease-out 1.2s forwards;
 }
 
 .typing-name {
@@ -1857,14 +1857,14 @@ footer {
 
 .typing-name-re {
     animation: 
-        typing 0.8s steps(100, end) 0.2s both,
-        name-rise 0.3s ease-out 2s forwards;
+        typing 0.3s steps(100, end) 0.2s both,
+        name-rise 0.3s ease-out 1.2s forwards;
 }
 
 .typing-name-line {
     animation: 
-        typing 1s steps(100, end) 0.8s both,
-        name-rise 0.3s ease-out 2s forwards;
+        typing 0.5s steps(100, end) 0.5s both,
+        name-rise 0.3s ease-out 1.2s forwards;
 }
 
 @keyframes typing {
@@ -1899,14 +1899,58 @@ footer {
     margin-top: 3vh; 
     font-size: clamp(0.9rem, 1.2vw, 1.2rem); 
 }
-
-.about-name-quote { 
-    color: var(--secondary); 
+.about-name-quote {
+    color: var(--gray);
     margin-top: 0.5vh;
+
+    transform: translateY(-5px);
+    opacity: 0;
+
+    animation:
+        about-name-content 0.2s ease-out 2s forwards,
+        name-quote-color 0.2s ease-out 2.6s forwards;
 }
-.about-name-content span { 
+
+.about-name-content-p {
+    transform: translateY(-5px);
+    opacity: 0;
+    animation: about-name-content 0.2s ease-out forwards;
+}
+
+.about-name-content-1 {
+    animation-delay: 1.7s;
+}
+
+.about-name-content-2 {
+    animation-delay: 2.3s;
+}
+
+.about-name-content span {
     color: var(--color);
 }
+
+@keyframes about-name-content {
+    from {
+        transform: translateY(-5px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes name-quote-color {
+    from {
+        color: var(--gray);
+    }
+
+    to {
+        color: var(--secondary);
+    }
+}
+
 
 /* Pause all name animations until visible */
 #about-name .typing-name-re,

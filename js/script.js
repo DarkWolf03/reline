@@ -1,4 +1,3 @@
-
 // =============== NAVIGATION ===============
 document.addEventListener("DOMContentLoaded", function () {
     let nav = document.getElementById("nav");
