@@ -343,11 +343,6 @@ nav {
     width: 0.75rem;
 }
 
-nav.nav-dark {
-    background: linear-gradient(90deg, rgba(255,0,0,0), rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.8) 95%, rgba(255,0,0,0));
-    transition: 0.3s ease;
-}
-
 
 @media screen and (max-width: 900px) {
 
