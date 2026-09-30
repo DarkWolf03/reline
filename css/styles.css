@@ -343,8 +343,10 @@ nav {
     width: 0.75rem;
 }
 
-
-
+nav.nav-dark {
+    background: linear-gradient(90deg, rgba(255,0,0,0), rgba(0, 0, 0, 0.7) 5%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0.8) 95%, rgba(255,0,0,0));
+    transition: 0.3s ease;
+}
 
 
 @media screen and (max-width: 900px) {
@@ -359,6 +361,10 @@ nav {
 
     .nav-menu-text {
         display: none;
+    }
+
+    nav {
+        transition: 0.3s ease;
     }
 
 
@@ -2019,7 +2025,8 @@ footer {
 }
 
 .about-name-content span {
-    color: var(--color);
+    color: var(--gray);
+    animation: name-span-color 0.8s ease-out 2.6s forwards;
 }
 
 @keyframes about-name-content {
@@ -2041,6 +2048,20 @@ footer {
 
     to {
         color: var(--secondary);
+    }
+}
+
+@keyframes name-span-color {
+    from {
+        color: var(--gray);
+    }
+
+    50% {
+        color: var(--secondary);
+    }
+
+    to {
+        color: var(--color);
     }
 }
 
@@ -2105,7 +2126,7 @@ footer {
     --chars: 38ch;
     animation:
         typing-slogan 1.5s steps(38, end) 0.7s forwards,
-        slogan-rise 0.4s ease-out 2.9s forwards;
+        slogan-rise 0.4s ease-out 3s forwards;
 }
 
 @keyframes slogan-rise {
@@ -2144,7 +2165,7 @@ footer {
 }
 
 .typing-3 + .about-slogan-desc {
-    animation-delay: 2.9s;
+    animation-delay: 3s;
 }
 
 @keyframes desc-reveal {
@@ -2195,7 +2216,7 @@ footer {
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat;
 }
 .about-socials-link::before {
     content: "";

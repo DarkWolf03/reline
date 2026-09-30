@@ -274,19 +274,24 @@ function copyText(btn) {
 
 
 
-// =============== FOOTER SCROLLING ANIMATION ===============
+// =============== FOOTER SCROLLING ANIMATION + NAV DARKENING ===============
 const footerSection = document.getElementById('footer');
+const navElement = document.getElementById('nav');
 
-const footerObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
+if (footerSection && navElement) {
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                navElement.classList.add('nav-dark');
+            } else {
+                navElement.classList.remove('nav-dark');
+            }
+        });
+    }, { threshold: 0.5 });
 
-footerObserver.observe(footerSection);
+    footerObserver.observe(footerSection);
+}
 
 
 
