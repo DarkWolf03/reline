@@ -250,7 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 
-
 // =============== COPY MAIL IN FOOTER ===============
 function copyText(btn) {
     const mail = btn.getAttribute("data-mail");
@@ -273,6 +272,23 @@ function copyText(btn) {
 
     document.body.removeChild(temp);
 }
+
+
+
+// =============== FOOTER SCROLLING ANIMATION ===============
+const footerSection = document.getElementById('footer');
+
+const footerObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+footerObserver.observe(footerSection);
+
 
 
 
