@@ -2046,9 +2046,6 @@ footer {
 
 /* Lightbox nav arrows */
 .lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: var(--primary);
     color: var(--secondary);
     font-size: 1rem;
@@ -2069,11 +2066,42 @@ footer {
     opacity: 1;
     color: var(--color-light);
     border: 1px solid var(--color-light);
-    transform: translateY(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
-.lightbox-prev { left: 1rem; }
-.lightbox-next { right: 1rem; }
+/* ---- Controls wrapper ---- */
+.lightbox-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none; /* let clicks pass through except on buttons */
+    z-index: 10;
+}
+
+.lightbox-controls > * {
+    pointer-events: auto;
+}
+
+/* Counter hidden on desktop (meta panel shows it) */
+.lightbox-counter {
+    display: none;
+    font-family: Manrope, Arial, sans-serif;
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+    color: var(--gray);
+    align-items: center;
+    gap: 0.35rem;
+    line-height: 1;
+}
+
+.lightbox-counter .current { color: var(--secondary); }
+.lightbox-counter .sep     { color: var(--gray); }
 
 .lightbox-close {
     position: absolute;
@@ -2100,7 +2128,6 @@ footer {
 }
 
 
-
 @media screen and (max-width: 1250px) {
     
     .gallery-grid {
@@ -2120,21 +2147,38 @@ footer {
 }
 
 @media screen and (max-width: 1050px) {
-    
-    .lightbox-nav {
+
+    .lightbox-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        width: 84%;
+        max-width: 1400px;
+        height: 60vh;
+    }
+
+    .lightbox-controls {
         top: auto;
-        bottom: 5vh;
+        bottom: 4vh;
+        transform: none;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
     }
 
-    .lightbox-next {
-        right: 28%;
+    .lightbox-counter {
+        display: inline-flex;
     }
 
-    .lightbox-prev {
-        left: 30%;
+    .lightbox-meta .meta-index {
+        visibility: hidden;
+        margin-top: 2rem;
     }
 
-
+    .lightbox-close {
+        top: 1.5rem;
+        right: 6%;
+    }
 }
 
 @media screen and (max-width: 1000px) {

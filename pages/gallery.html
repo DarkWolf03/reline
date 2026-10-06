@@ -80,9 +80,8 @@
 
 	<!-- LIGHTBOX -->
 	<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+
 		<button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
-		<button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">←</button>
-		<button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">→</button>
 
 		<div class="lightbox-inner">
 			<div class="lightbox-image-wrap">
@@ -106,6 +105,17 @@
 					<span class="current" id="metaIndex">01</span> / <span id="metaTotal">01</span>
 				</div>
 			</aside>
+		</div>
+
+		<!-- NEW: unified controls -->
+		<div class="lightbox-controls">
+			<button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">←</button>
+			<div class="lightbox-counter">
+				<span class="current" id="lightboxCurrent">01</span>
+				<span class="sep">/</span>
+				<span id="lightboxTotal">01</span>
+			</div>
+			<button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">→</button>
 		</div>
 	</div>
 
@@ -133,10 +143,10 @@ const ITEMS = [
 	{ id: 76, src: '../img/Group_photos/p1harmony-KillinIt-KWF-KpopWorldFestival2026-kpop-dance-cover-1.JPG', category: 'stage', span: 'tall', title: 'Kpop world festival in Dunaj Austria', description: 'Hana Agić, Tajda Pešec' },
 	{ id: 75, src: '../img/Group_photos/p1harmony-KillinIt-KWF-KpopWorldFestival2026-kpop-dance-cover-2.PNG', category: 'stage', span: 'tall', title: 'Kpop world festival in Dunaj Austria', description: 'Hana Agić, Tajda Pešec' },
 	{ id: 74, src: '../img/Group_photos/lesserafim-boompala-kpop-dance-cover-1.jpg', category: 'cover', span: 'wide', photographer: 'Lana Baltič', title: 'LE SSERAFIM - BOOMPALA', description: ' Lara Bajec Klepac, Ema Poljanec, Gabrijela Ščavničar, Tajda Pešec, Neja Mesarič' },
-	{ id: 73, src: '../img/Group_photos/SeungYeon-clc-danceClass-4.jpg', category: 'class', span: 'tall', title: 'Dance collaboration with Seung Yeon', description: 'It’s been an honour to get a chance to dance and film CLC’s No with @seung_monkey herself. We are so thankful for all the advice and knowledge she shared with us while filming and during the classes themselves. To bring a piece of the song to Ljubljana has been a dream for many of us and we are so thankful to @jayu.entertainment for allowing us to take part in it.' },
-	{ id: 72, src: '../img/Group_photos/SeungYeon-clc-danceClass-1.JPG', category: 'class', span: 'tall', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: 'It’s been an honour to get a chance to dance and film CLC’s No with @seung_monkey herself. We are so thankful for all the advice and knowledge she shared with us while filming and during the classes themselves. To bring a piece of the song to Ljubljana has been a dream for many of us and we are so thankful to @jayu.entertainment for allowing us to take part in it.' },
-	{ id: 71, src: '../img/Group_photos/SeungYeon-clc-danceClass-2.JPG', category: 'class', span: 'wide', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: 'It’s been an honour to get a chance to dance and film CLC’s No with @seung_monkey herself. We are so thankful for all the advice and knowledge she shared with us while filming and during the classes themselves. To bring a piece of the song to Ljubljana has been a dream for many of us and we are so thankful to @jayu.entertainment for allowing us to take part in it.' },
-	{ id: 70, src: '../img/Group_photos/SeungYeon-clc-danceClass-3.JPG', category: 'class', span: '', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: 'It’s been an honour to get a chance to dance and film CLC’s No with @seung_monkey herself. We are so thankful for all the advice and knowledge she shared with us while filming and during the classes themselves. To bring a piece of the song to Ljubljana has been a dream for many of us and we are so thankful to @jayu.entertainment for allowing us to take part in it.' },
+	{ id: 73, src: '../img/Group_photos/SeungYeon-clc-danceClass-4.jpg', category: 'class', span: 'tall', title: 'Dance collaboration with Seung Yeon', description: '' },
+	{ id: 72, src: '../img/Group_photos/SeungYeon-clc-danceClass-1.JPG', category: 'class', span: 'tall', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: '' },
+	{ id: 71, src: '../img/Group_photos/SeungYeon-clc-danceClass-2.JPG', category: 'class', span: 'wide', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: '' },
+	{ id: 70, src: '../img/Group_photos/SeungYeon-clc-danceClass-3.JPG', category: 'class', span: '', photographer: 'Lana Baltič', title: 'Dance collaboration with Seung Yeon', description: '' },
 	{ id: 69, src: '../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-1.jpg', category: 'stage', span: '', photographer: 'Jernej Tratnik', title: 'Performance at BastArts production in Ljubljana Slovenia', description: 'JENNIE - Like JENNIE MMA Ver.' },
 	{ id: 68, src: '../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-2.JPG', category: 'stage', span: '', photographer: 'Jernej Tratnik', title: 'Performance at BastArts production in Ljubljana Slovenia', description: 'JENNIE - Like JENNIE MMA Ver.' },
 	{ id: 67, src: '../img/Group_photos/BastArt-performance-jennie-likeJennie-kpop-dance-cover-3.JPG', category: 'stage', span: '', photographer: 'Jernej Tratnik', title: 'Performance at BastArts production in Ljubljana Slovenia', description: 'JENNIE - Like JENNIE MMA Ver.' },
@@ -413,6 +423,9 @@ const ITEMS = [
 		metaCategories.innerHTML     = `<span>${item.category}</span>`;
 		metaIndex.textContent        = String(lightboxIndex + 1).padStart(2, '0');
 		metaTotal.textContent        = String(visibleItems.length).padStart(2, '0');
+
+		document.getElementById('lightboxCurrent').textContent = String(lightboxIndex + 1).padStart(2, '0');
+    document.getElementById('lightboxTotal').textContent   = String(visibleItems.length).padStart(2, '0');
 	}
 
 	function nextImage() {
