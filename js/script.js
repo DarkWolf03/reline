@@ -168,13 +168,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let logoPath, homeLink, aboutLink, projectsLink, galleryLink, contactLink;
 
     if (inSubfolder) {
-        logoPath = "../img/Logo/FULL NAME LOGO/reline-logo-white.png";
+        logoPath = "../img/Logo/FULL NAME LOGO/reline-logo-white-1.png";
         homeLink = "../index.html";
         aboutLink = "about.html";
         projectsLink = "projects.html";
         galleryLink = "gallery.html";
     } else {
-        logoPath = "img/Logo/FULL NAME LOGO/reline-logo-white.png";
+        logoPath = "img/Logo/FULL NAME LOGO/reline-logo-white-1.png";
         homeLink = "index.html";
         aboutLink = "pages/about.html";
         projectsLink = "pages/projects.html";
@@ -212,27 +212,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <div class="footer-logo">
                 <img src="${logoPath}" alt="reline logo">
-                <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
             </div>
 
             <div class="footer-nav">
                 <h4>NAVIGATE</h4>
-                <ul>
-                    <li><a href="${homeLink}">Home</a></li>
-                    <li><a href="${aboutLink}">About</a></li>
-                    <li><a href="${projectsLink}">Projects</a></li>
-                    <li><a href="${galleryLink}">Gallery</a></li>
-                </ul>
+                <div class="footer-navigation">
+                    <a href="${homeLink}" class="footer-nav-link">Home</a>
+                    <a href="${aboutLink}" class="footer-nav-link">About</a>
+                    <a href="${projectsLink}" class="footer-nav-link">Projects</a>
+                    <a href="${galleryLink}" class="footer-nav-link">Gallery</a>
+                </div>  
+            </div>  
+
+            <div class="footer-contact">
+                <h4>Contact us</h4>
+                <button onclick="copyText(this)" class="footer-mail" data-mail="relinecrew@gmail.com">relinecrew@gmail.com</button>
             </div>
 
             <div class="footer-social">
-                <h4>Socials</h4>
-                <ul>
-                    <li><a href="https://www.youtube.com/@_RELINEcrew" target="_blank">YouTube</a></li>
-                    <li><a href="https://www.instagram.com/relineofficial__" target="_blank">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/@_relinecrew" target="_blank">TikTok</a></li>
-                    <li><a href="https://linktr.ee/relinecrew" target="_blank">Linktree</a></li>
-                </ul>
+                <h4>Follow us</h4>
+                <div class="footer-social-container">
+                    <a href="https://www.youtube.com/@_RELINEcrew" target="_blank" class="footer-social-link">
+                        <img src="${inSubfolder ? '../' : ''}img/youtube.png" alt="youtube">
+                    </a>
+                    <a href="https://www.instagram.com/relineofficial__" target="_blank" class="footer-social-link">
+                        <img src="${inSubfolder ? '../' : ''}img/instagram.png" alt="instagram">
+                    </a>
+                    <a href="https://www.tiktok.com/@_relinecrew" target="_blank" class="footer-social-link">
+                        <img src="${inSubfolder ? '../' : ''}img/tiktok.png" alt="tiktok">
+                    </a>
+                    <a href="https://linktr.ee/relinecrew" target="_blank" class="footer-social-link">
+                        <img src="${inSubfolder ? '../' : ''}img/linktree.png" alt="linktree">
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -241,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             <p>© 2026 ЯEL|NE</p>
 
-            <p>Made by <a href="https://linktr.ee/zadravec_larisa" target="_blank">Larisa Zadravec</a></p>
+            <p>Created with ♥ by <a href="https://linktr.ee/zadravec_larisa" target="_blank">Larisa Zadravec</a></p>
 
         </div>
     `
@@ -288,7 +300,7 @@ if (footerSection && navElement) {
                 navElement.classList.remove('nav-dark');
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.6 });
 
     footerObserver.observe(footerSection);
 }
