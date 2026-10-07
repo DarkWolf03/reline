@@ -1583,14 +1583,6 @@ footer {
 }
 
 
-/* Responsive - skrij na mobilnih */
-@media screen and (max-width: 768px) {
-    .timeline-photo {
-        display: none;
-    }
-}
-
-
 
 @media screen and (max-width: 1200px) {
     
@@ -1709,6 +1701,16 @@ footer {
         margin: 40px auto 20px auto;
     }
 
+
+    .timeline-photo {
+        width: 28%;
+    }
+    .timeline-photo.left {
+        left: 10%;
+    }
+
+
+
 }
 
 @media screen and (max-width: 900px) {
@@ -1754,7 +1756,9 @@ footer {
         margin-left: 0.3rem; 
     }
 
-
+    .timeline-photo {
+        display: none;
+    }
 
 
 
