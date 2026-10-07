@@ -379,7 +379,9 @@ nav {
 
     nav {
         transition: 0.3s ease;
+        height: 6vh;
     }
+
 
 
 }
@@ -389,7 +391,7 @@ nav {
 .overlay {
     position: fixed;
     inset: 0;
-    width: 100%;
+
     height: 100vh;
     background: var(--primary);
     z-index: 1000;
@@ -411,7 +413,7 @@ nav {
 
 /* HEADER */
 .overlay-header {
-    height: 8vh;
+    height: 5vh;
     min-height: 60px;
     display: flex;
     justify-content: space-between;
@@ -426,13 +428,12 @@ nav {
     border: none;
     box-shadow: none;
     padding: 0;
-    margin-right: -1rem;
     width: 33px;
     height: 33px;
-    position: absolute;
+    position: relative;
     cursor: pointer;
-    top: 20px;
-    right: 30px;
+    right: 0;
+    justify-self: right;
 }
 
 .close-line {
@@ -874,7 +875,7 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 4vh;
+        margin-bottom: 3vh;
         height: auto;
     }
 
@@ -918,7 +919,7 @@ footer {
     .footer-contact,
     .footer-social {
         border-top: var(--border-footer);
-        padding-bottom: 5vh;
+        padding-bottom: 4vh;
     }
 
     .footer h4 {
@@ -928,6 +929,10 @@ footer {
         position: relative;
         top: -9px;
         padding: 0 1rem;
+    }
+
+    .footer-social-container {
+        gap: 0.6rem;
     }
 
 }
@@ -944,6 +949,10 @@ footer {
     }
     .footer-nav-link:hover {
         transform: scale(1.07);
+    }
+
+    .footer h4 {
+        margin: 0 auto 0.5vh;
     }
 
 }
@@ -1509,9 +1518,84 @@ footer {
 
 
 
+/* ========== TIMELINE FLOATING IMAGES ========== */
+.timeline-photo {
+    position: absolute;
+    width: 25%;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: auto;
+}
+
+
+.timeline-photo.is-visible {
+    opacity: 1;
+}
+
+.timeline-photo.left {
+    left: 15%;
+}
+
+.timeline-photo.right {
+    left: 60%;
+}
+
+.timeline-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--secondary);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(244, 244, 242, 0.05);
+    transition: all 0.3s;
+}
+
+.timeline-photo.left img.tilt-1 { transform: rotate(-5deg); }
+.timeline-photo.left img.tilt-2 { transform: rotate(4deg); }
+.timeline-photo.left img.tilt-3 { transform: rotate(-2deg); }
+
+.timeline-photo.right img.tilt-1 { transform: rotate(-5deg); }
+.timeline-photo.right img.tilt-2 { transform: rotate(4deg); }
+.timeline-photo.right img.tilt-3 { transform: rotate(-2deg); }
+
+
+.timeline-photo.move-up {
+    transform: translateY(-40px)
+}
+.timeline-photo.move-down {
+    transform: translateY(40px)
+}
+
+.timeline-photo img.tilt-1:hover,
+.timeline-photo img.tilt-2:hover,
+.timeline-photo img.tilt-3:hover,
+.timeline-photo.left img.tilt-1:hover,
+.timeline-photo.left img.tilt-2:hover,
+.timeline-photo.left img.tilt-3:hover,
+.timeline-photo.right img.tilt-1:hover,
+.timeline-photo.right img.tilt-2:hover,
+.timeline-photo.right img.tilt-3:hover {
+    transform: rotate(0deg) scale(1.06);
+}
+
+
+/* Responsive - skrij na mobilnih */
+@media screen and (max-width: 768px) {
+    .timeline-photo {
+        display: none;
+    }
+}
+
+
+
 @media screen and (max-width: 1200px) {
     
 
+    .timeline {
+        padding: 10px 0;
+    }
     .timeline-item {
         padding: 10px 0px;
     }
@@ -1526,11 +1610,13 @@ footer {
         align-items: center;
         flex-direction: column;
         position: sticky;
-        top: 7.2vh;
+        top: 7.3vh;
         z-index: 100;
-        background: linear-gradient(rgba(16, 17, 20, 0.75) 60%, rgba(0, 0, 0, 0));
+        background: linear-gradient(
+            rgba(16, 17, 20, 0.75) 50%, 
+            rgba(0, 0, 0, 0));
         backdrop-filter: blur(1px);
-        padding: 1vh 0 0vh 0;
+        
     }
 
     .timeline-navigation-small-container {
@@ -1540,6 +1626,7 @@ footer {
         position: sticky;
         z-index: 100;
         padding: 1vh 0 3vh 0;
+        gap: 1.5rem;
     }
 
     .timeline-navigation-link-small {
@@ -1554,7 +1641,7 @@ footer {
         opacity: 0;
         background: linear-gradient(rgba(0, 0, 0, 0), var(--primary), rgba(0, 0, 0, 0));
         padding: 0 0.5rem;
-        margin: 0 1rem;
+        
 
         animation: projects-navigation 0.2s ease-out forwards;
     }
@@ -1611,12 +1698,24 @@ footer {
         scroll-margin-top: 130px; 
     }
 
+    #timeline-2024 {
+        margin-top: 20px
+    }
+
 
     .timeline-year {
         margin: 40px auto 20px auto;
     }
 
 }
+
+@media screen and (max-width: 900px) {
+    .timeline-navigation-small {
+        top: 6.2vh;
+    }
+}
+
+
 
 @media screen and (max-width: 768px) {
     .timeline::after { left: 31px; }
@@ -2512,7 +2611,7 @@ footer {
 
 .about-name-content span {
     color: var(--gray);
-    animation: name-span-color 0.8s ease-out 2.6s forwards;
+    animation: name-span-color 0.8s ease-out 2.7s forwards;
 }
 
 @keyframes about-name-content {
@@ -2540,10 +2639,6 @@ footer {
 @keyframes name-span-color {
     from {
         color: var(--gray);
-    }
-
-    50% {
-        color: var(--secondary);
     }
 
     to {
@@ -2880,6 +2975,7 @@ footer {
             "about-right"
             "about-left";
         padding-bottom: 0;
+        padding: 6vh 3rem 0 3rem;
     }
     .about-introduction-left { grid-area: about-left; }
     .about-introduction-right { grid-area: about-right; }

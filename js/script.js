@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
 
             <div class="footer-nav">
-                <h4>NAVIGATE</h4>
+                <h4>Menu</h4>
                 <div class="footer-navigation">
                     <a href="${homeLink}" class="footer-nav-link">Home</a>
                     <a href="${aboutLink}" class="footer-nav-link">About</a>
