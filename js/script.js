@@ -187,26 +187,24 @@ document.addEventListener("DOMContentLoaded", function () {
         <!-- Scrolling marquee -->
         <div class="footer-marquee" aria-hidden="true">
             <div class="footer-marquee-track">
-                <span>ЯEdefine your path</span>
+            <div class="footer-marquee-group">
+                <span class="filled">redefine your path</span>
                 <span class="dot">▬</span>
-                <span class="filled">ЯEline your story</span>
+                <span>rewrite your story</span>
                 <span class="dot">▬</span>
-
-                <span>Where paths RELINE</span>
-                <span class="dot">▬</span>
-                <span class="filled">Where dancers RELINE</span>
-                <span class="dot">▬</span>
-
-                <span>ЯEdefine your path</span>
-                <span class="dot">▬</span>
-                <span class="filled">ЯEline your story</span>
-                <span class="dot">▬</span>
-
-                <span>Where paths RELINE</span>
-                <span class="dot">▬</span>
-                <span class="filled">Where dancers RELINE</span>
+                <span class="filled">where paths reline</span>
                 <span class="dot">▬</span>
             </div>
+            <div class="footer-marquee-group">
+                <span>redefine your path</span>
+                <span class="dot">▬</span>
+                <span class="filled">rewrite your story</span>
+                <span class="dot">▬</span>
+                <span>where paths reline</span>
+                <span class="dot">▬</span>
+            </div>
+        </div>
+    </div>
         </div>
 
         <div class="footer">

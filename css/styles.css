@@ -590,10 +590,23 @@ footer {
 }
 
 .footer-marquee-track {
-    display: inline-flex;
-    gap: 3rem;
+    display: flex;
+    width: max-content;
     animation: marquee 30s linear infinite;
     will-change: transform;
+}
+
+.footer-marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding-right: 3rem; 
+    flex-shrink: 0;
+}
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
 .footer-marquee-track span {
@@ -625,10 +638,6 @@ footer {
     font-size: clamp(2rem, 3vw, 3rem);
 }
 
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
 
 .footer-marquee:hover .footer-marquee-track {
     animation-play-state: paused;
